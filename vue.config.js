@@ -19,5 +19,17 @@ module.exports = {
 			.options({
 				symbolId: 'icon-[name]'
 			});
+		/** 设置svgo精简压缩svg文件 **/
+		config.module.rule('svgo-loader')
+			.test(/\.svg$/)
+			.use('svgo-loader')
+			.loader('svgo-loader')
+			.options({
+				plugin: [
+					// 还有很多配置，具体可以查看https://github.com/svg/svgo
+					{ removeViewBox: false },
+					{ removeXMLNS: true }
+				]
+			})
 	}
 }
