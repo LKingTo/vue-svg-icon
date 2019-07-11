@@ -4,9 +4,10 @@
 ## 安装插件
 yarn add svg-sprite-loader -D
 
-## svg-icon组件，
-### 路径：src/components/svgIcon/index.vue
-### 全局注册
+## svg-icon组件
+- 路径：src/components/svgIcon/index.vue
+- 全局注册
+- 组件
 
 ```
 //components/Icon-svg
@@ -91,6 +92,28 @@ module.exports = {
   }
 }
 ```
+## 插件 svgo、svgo-loader 精简压缩工具
+- yarn add svgo svgo-loader -D
+- vue.config.js 设置内容如下：
+```
+config.module.rule('svgo-loader')
+  .test(/\.svg$/)
+  .use('svgo-loader')
+  .loader('svgo-loader')
+  .options({
+  	 plugin: [
+  	   // 还有很多配置，具体可以查看https://github.com/svg/svgo
+  	   { removeViewBox: false },
+  	   { removeXMLNS: true }
+  	 ]
+  })
+```
+
+## 参考文献
+- 手摸手，带你优雅的使用 icon https://juejin.im/post/59bb864b5188257e7a427c09
+- 基于vue-cli3使用svg-sprite-loader在vue中引入svg图标 https://www.jianshu.com/p/b1a16a030f72
+- SVG精简压缩工具svgo简介和初体验 https://www.zhangxinxu.com/wordpress/2016/02/svg-compress-tool-svgo-experience/
+- SVG在线压缩合并工具 https://www.zhangxinxu.com/sp/svgo/
 
 ## Project setup
 ```
