@@ -115,6 +115,8 @@ config.module.rule('svgo-loader')
 - SVG精简压缩工具svgo简介和初体验 https://www.zhangxinxu.com/wordpress/2016/02/svg-compress-tool-svgo-experience/
 - SVG在线压缩合并工具 https://www.zhangxinxu.com/sp/svgo/
 
+- gulp-iconfont仿阿里巴巴图标库，本地打包iconfont字体图标: https://github.com/w3cui/iconfont
+
 ## Project setup
 ```
 yarn install
